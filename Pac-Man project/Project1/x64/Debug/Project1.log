@@ -1,0 +1,15 @@
+﻿  Board.cpp
+  file.cpp
+  Fruit.cpp
+C:\Users\yigal\OneDrive\שולחן העבודה\למיין\לימודים - כללי\cpp\project\pacman final exe 2\PACMAN16-12-21\Project1\Fruit.cpp(26,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Game.cpp
+C:\Users\yigal\OneDrive\שולחן העבודה\למיין\לימודים - כללי\cpp\project\pacman final exe 2\PACMAN16-12-21\Project1\Game.cpp(123,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\yigal\OneDrive\שולחן העבודה\למיין\לימודים - כללי\cpp\project\pacman final exe 2\PACMAN16-12-21\Project1\Game.cpp(179,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  GameObjects.cpp
+  Ghost.cpp
+  Location.cpp
+  menu.cpp
+  Packman.cpp
+  Source.cpp
+  Generating Code...
+  Project1.vcxproj -> C:\Users\yigal\OneDrive\שולחן העבודה\למיין\לימודים - כללי\cpp\project\pacman final exe 2\PACMAN16-12-21\x64\Debug\project1.exe

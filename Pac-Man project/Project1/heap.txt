@@ -1,0 +1,103 @@
+class Heap
+{
+	private:
+		Pair* data;
+		int maxSize;
+		int heapSize;
+		int allocated;
+		static int Left(int node);
+		static int Right(int node);
+		static int Parent(int node);
+		void FixHeap(int node);
+	public:
+		Heap(int max);
+		Heap(Type A[], int n);
+		~Heap();
+		Pair Max();
+		Pair DeleteMax();
+		void Insert(Pair item);
+}
+
+Heap::Heap(int max)
+{
+	data = new Pair[max];
+	maxSize = max;
+	heapSize = 0;
+	allocated = 1;
+}
+Heap::~Heap()
+{
+	if(allocated)
+		delete[]data;
+	data = NULL;
+}
+int Heap::Parent(int node)
+{
+	return (node - 1) / 2;
+}
+int Heap::Left(int node)
+{
+	return (2 * node) + 1;
+}
+int Heap::Right(int node)
+{
+	return (2 * node) + 2;
+}
+void Heap::FixHeap(int node)
+{
+	int max;
+	int left = Left(node);
+	int right = Right(node);
+	
+	if ((left < heapSize) && (data[left].priority > data[node].priority))
+		max = left;
+	else
+		max = node;
+	
+	if((right < heapSize) && (data[right].priority > data[max].priority))
+		max = right;
+	
+	if(max != node)
+	{
+		Swap(data[node], data[max]);
+		FixHeap(max);	
+	}
+}
+Pair Heap::DeleteMax()
+{
+	if(heapSize < 1)
+		//Handle error
+	Pair max = data[0];
+	heapSize--;
+	data[0] = data[heapSize];
+	FixHeap(0);
+	return max;
+}
+void Heap::Insert(Pair item);
+{
+	if(heapSize == maxSize)
+		//Handle error
+	int i = heapSize;
+	heapSize++;
+	
+	while((i > 0) && (data[Parent(i)].priority < item.priority))
+	{
+		data[i] = data[Parent(i)];
+		i = Parent(i);
+	}
+	data[i] = item;
+}
+Heap::Heap(Type A[], int n)
+{
+	heapSize = maxSize = n;
+	data = A;
+	allocated = 0;
+	
+	for(int i = (n / 2) - 1; i => 0; i--)
+		FixHeap(i);
+}
+
+
+
+
+
